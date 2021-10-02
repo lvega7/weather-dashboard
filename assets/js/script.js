@@ -7,12 +7,13 @@ var humid = document.querySelector(".humid")
 var uv = document.querySelector(".uv")
 
 
-// var weather = function() {
-    // var apiURL = "api.openweathermap.org/data/2.5/weather?id={city id}&appid={API key}";
 button.addEventListener('click', function(event){
     fetch(
         'https://api.openweathermap.org/data/2.5/weather?q='+city.value+'&appid=732c0fa667469c7a58ce218262c96309'
       )
+    //   fetch (
+        // 'https://api.openweathermap.org/data/2.5/onecall?lat=32.7153&lon=-117.1573&exclude={part}&appid=732c0fa667469c7a58ce218262c96309')
+
         .then(response => response.json()) 
         .then(data => {
             var cityNameDateValue = data['name'];
@@ -21,36 +22,30 @@ button.addEventListener('click', function(event){
             var humidValue = data ['main']['humidity']
 
             cityNameDate.innerHTML = cityNameDateValue
-            temp.innerHTML = tempValue
-            wind.innerHTML = windValue
-            humid.innerHTML = humidValue
+            temp.innerHTML = "Temp: "+ tempValue
+            wind.innerHTML = "Wind: "+ windValue+ "mph"
+            humid.innerHTML = "Humidity: "+humidValue + "%"
             
+            console.log(data)
+            fiveDayForecast();
 
         })
+   
 
 
         event.preventDefault();
         
 })
 
-// button.addEventListener('click', function(event){
-//     console.log(city.value)
-//     event.preventDefault();
-// })
+
+// var fiveDayForecast = function(){
 
 
+//     fetch (
+//         'https://api.openweathermap.org/data/2.5/onecall?lat=32.7153&lon=-117.1573&exclude={part}&appid=732c0fa667469c7a58ce218262c96309')
 
+//         .then(response => response.json()) 
+//         .then(data => console.log(data))
 
+//     }
 
-        // .then(function(response){
-        //     var showWeather = document.querySelector('#show-weather');
-
-        //     var weatherImg = document.createElement('img');
-
-        //     weatherImg.setAttribute('src', response.data.image_url);
-
-        //     showWeather.appendChild(weatherImg);
-        // });
-
-
-    
