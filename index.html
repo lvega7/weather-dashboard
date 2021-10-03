@@ -14,7 +14,7 @@
         <h1>Weather Dashboard</h1>
     </header>
 
-    <main class="flex-row justify-space-between">
+    <main class="flex-row justify-space-between row">
         <div class="col-12 col-md-4">
           <div class="card">
             <h3 class="card-header text-uppercase">Search for a City:</h3>
@@ -24,6 +24,17 @@
             </form>
           </div>
         </div>
+
+        <div class="card ">
+            
+            <div class="card-body">
+              <h5 class="card-title cityNameDate">City:</h5>
+              <p class="card-text temp">Tempertaure:</p>
+              <p class="card-text wind">Wind:</p>
+              <p class="card-text humid">Humidity:</p>
+              
+            </div>
+          </div>
         </main>
         <div id="show-weather">
             <h2 class="cityNameDate"></h2>
@@ -34,16 +45,19 @@
             <h2 class="uv"></h2>
             <h2 class="lat"></h2>
             <h2 class="lon"></h2>
-            <h2 class="temp2"></h2>
+            
             
         </div>
+
+        <!-- todays weather -->
+        
 
         <!-- card layout -->
         <div class="card-deck">
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <h5 class="day1">Card title</h5>
+                <p class="temp1"></p>
               </div>
               <div class="card-footer">
                 
@@ -51,8 +65,8 @@
             </div>
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                <h5 class="day2">Card title</h5>
+                <p class="temp2"></p>
               </div>
               <div class="card-footer">
                 
@@ -60,8 +74,8 @@
             </div>
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                <h5 class="day3">Card title</h5>
+                <p class="temp3"></p>
               </div>
               <div class="card-footer">
                 
@@ -69,8 +83,8 @@
             </div>
             <div class="card">
                 <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                  <h5 class="day4">Card title</h5>
+                  <p class="temp4"></p>
                 </div>
                 <div class="card-footer">
                   
@@ -78,8 +92,8 @@
               </div>
               <div class="card">
                 <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                  <h5 class="day5">Card title</h5>
+                  <p class="temp5"></p>
                 </div>
                 <div class="card-footer">
                   
