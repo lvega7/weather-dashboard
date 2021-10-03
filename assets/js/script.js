@@ -61,10 +61,10 @@ button.addEventListener('click', function(event){
             var tempValue = data['main']['temp'];
             var windValue = data ['wind']['speed']
             var humidValue = data ['main']['humidity']
-            var iconValue = data ['weather'][0]['icon']
+           
             // var uvValue = data['daily']['uvi']
 
-            cityNameDate.innerHTML = cityNameDateValue + " " + day + iconValue
+            cityNameDate.innerHTML = cityNameDateValue + " " + day 
             temp.innerHTML = "Temp: "+ tempValue + "°F"
             wind.innerHTML = "Wind: "+ windValue+ "mph"
             humid.innerHTML = "Humidity: "+humidValue + "%"
@@ -145,20 +145,20 @@ button.addEventListener('click', function(event){
                     uvIndex.innerHTML = "UV: " + uvIndexValue
                     
                   
-                        if(uvIndexValue <= 2 ){
+                        if(uvIndexValue < 3 ){
                             uvIndex.style.backgroundColor=("green");
                         }
-                        else if(uvIndexValue<= 5){
+                        else if(uvIndexValue< 6){
                             uvIndex.style.backgroundColor=("yellow")
                         }
-                        else if(uvIndexValue<= 7){
+                        else if(uvIndexValue< 8 ){
                             uvIndex.style.backgroundColor=("orange")
                         }
-                        else if(uvIndexValue<= 10){
+                        else if(uvIndexValue<= 11){
                             uvIndex.style.backgroundColor=("red")
                         }
                         else if(uvIndexValue>= 11 ){
-                            uvIndex.style.backgroundColor=("yellow")
+                            uvIndex.style.backgroundColor=("purple")
                         }
                         
                         

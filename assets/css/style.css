@@ -13,3 +13,10 @@
     box-shadow: 3px 3px var(--dark);
     transform: translate(-1px, -1px);
   }
+
+  .uvIndex {
+      width: 150px;
+      height: 30px;
+      text-align: left;
+      font-size: 20px;
+  }
