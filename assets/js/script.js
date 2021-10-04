@@ -30,6 +30,7 @@ var day = moment ().format('l');
     
 // }
 
+// dates in card for forecast
 var day1date= moment().add(1, 'days').calendar('l');
     day1.innerHTML = day1date
 
@@ -57,10 +58,12 @@ button.addEventListener('click', function(event){
       
         .then(response => response.json()) 
         .then(data => {
+            // todays forecast
             var cityNameDateValue = data['name'];
             var tempValue = data['main']['temp'];
             var windValue = data ['wind']['speed']
             var humidValue = data ['main']['humidity']
+            // var iconValue = data ['weather'][0]['icon']
            
             // var uvValue = data['daily']['uvi']
 
@@ -68,6 +71,8 @@ button.addEventListener('click', function(event){
             temp.innerHTML = "Temp: "+ tempValue + "°F"
             wind.innerHTML = "Wind: "+ windValue+ "mph"
             humid.innerHTML = "Humidity: "+humidValue + "%"
+
+
             // uv.innerHTML = uvValue
             
             var latValue = data['coord']['lat']
@@ -80,6 +85,7 @@ button.addEventListener('click', function(event){
                 'https://api.openweathermap.org/data/2.5/onecall?lat='+latValue+'&lon='+lonValue+'&units=imperial&exclude={part}&appid=732c0fa667469c7a58ce218262c96309')
                 .then(response => response.json()) 
                 .then(data =>{
+                    // temperature
                     var temp1Value ="Temp:"+data ['daily'][1]['temp']['day'] 
                     var temp2Value ="Temp:"+data ['daily'][2]['temp']['day'] 
                     var temp3Value ="Temp:"+data ['daily'][3]['temp']['day'] 
@@ -87,7 +93,7 @@ button.addEventListener('click', function(event){
                     var temp5Value ="Temp:"+data ['daily'][5]['temp']['day'] 
                     
                     
-
+                    // inputing temperature
                     temp1.innerHTML = temp1Value
                     temp2.innerHTML = temp2Value
                     temp3.innerHTML = temp3Value
@@ -101,19 +107,21 @@ button.addEventListener('click', function(event){
                         
                     // }
 
-                    // wind forecast
+                    // wind forecast linking
                     var wind1 = document.querySelector(".wind1")
                     var wind2 = document.querySelector(".wind2")
                     var wind3 = document.querySelector(".wind3")
                     var wind4 = document.querySelector(".wind4")
                     var wind5 = document.querySelector(".wind5")
-
+                    
+                    // wind forecast for 5 days
                     var wind1value ="Wind:"+data ['daily'][1]['wind_speed']+ "mph"
                     var wind2value ="Wind:"+data ['daily'][2]['wind_speed']+ "mph"
                     var wind3value ="Wind:"+data ['daily'][3]['wind_speed']+ "mph"
                     var wind4value ="Wind:"+data ['daily'][4]['wind_speed']+ "mph"
                     var wind5value ="Wind:"+data ['daily'][5]['wind_speed']+ "mph"
 
+                    // wind forecast inputing
                     wind1.innerHTML=wind1value
                     wind2.innerHTML=wind2value
                     wind3.innerHTML=wind3value
@@ -161,23 +169,15 @@ button.addEventListener('click', function(event){
                             uvIndex.style.backgroundColor=("purple")
                         }
                         
-                        
-                        
-                        
                     saveCities();
 
 
                  
                 })
                 
-                
-
-            // lat.innerHTML = latValue
-            // lon.innerHTML = lonValue
-
         })
    
-
+        // saves to local storage
         var saveCities = function(){
                // saved items 
                document.querySelector(".list").value = localStorage.getItem('city');
@@ -190,6 +190,13 @@ button.addEventListener('click', function(event){
                
                
         }
+
+        // search for recent searched cities
+        var searchButton= document.querySelector("#search-button")
+        searchButton.addEventListener('click', function(){
+            var searchValue=searchButton.value
+            searchValue=city
+        })
 
         // stops it from refreshing 
         event.preventDefault();
