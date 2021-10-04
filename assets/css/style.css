@@ -7,11 +7,11 @@
     margin: 5px 0;
     border-radius: var(--border-radius);
     color: var(--primary);
-    border: none;
-    outline: none;
-    background-color: var(--light-dark);
-    box-shadow: 3px 3px var(--dark);
+  
     transform: translate(-1px, -1px);
+  }
+  .submit{
+    border: 2px solid black;
   }
 
   .uvIndex {
@@ -19,4 +19,20 @@
       height: 30px;
       text-align: left;
       font-size: 20px;
+  }
+  .nav{
+      padding: 20px;
+      margin: 10px 5px 20px 5px;
+      font-size: 30px;
+      text-align: center;
+      flex-wrap: wrap;
+      justify-content: center;
+  }
+
+  .city-input{
+      
+      margin-bottom: 20px;
+  }
+  .history{
+      margin-bottom: 30px;
   }

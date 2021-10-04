@@ -11,28 +11,32 @@
 </head>
 <body>
     <header>
-        <h1>Weather Dashboard</h1>
+        <nav class="navbar navbar-dark bg-primary nav">
+            <!-- Navbar content -->
+            Weather Dashboard
+          </nav>
     </header>
-
+<!-- search for a city -->
     <main class="flex-row justify-space-between row">
-        <div class="col-12 col-md-4">
+        <div class="col-sm-3">
           <div class="card">
-            <h3 class="card-header text-uppercase">Search for a City:</h3>
-            <form id="user-form" class="card-body">
-              <input name="city" id="city" type="text" autofocus="true" class="form-input" />
-              <button type="submit" class="btn"> Submit </button>
+            <h3 class=" text-uppercase">Search for a City:</h3>
+            <form id="user-form" class="card-body  btn">
+              <input name="city" id="city" type="text" autofocus="true" class="form-input city-input" />
+              <button type="button" class="btn btn-outline-primary">Search</button>
             </form>
           </div>
         </div>
 
-        <div class="card ">
-            
+        <div class="card  col-sm-9">
+
+            <!-- today's weather -->
             <div class="card-body">
-              <h5 class="card-title cityNameDate">City:</h5>
+              <h3 class="card-title cityNameDate">City:</h3>
               <p class="card-text temp">Tempertaure:</p>
               <p class="card-text wind">Wind:</p>
               <p class="card-text humid">Humidity:</p>
-              <span class="badge badge-light uvIndex">Primary</span>
+              <span class="badge badge-light uvIndex">UV:</span>
               <!-- <button type="button" class="btn btn-secondary btn-lg uvIndex " disabled>UV</button> -->
               <!-- <button type="button" class="btn uvIndex"></button> -->
               <!-- <p class="card-text uvIndex">UV:</p> -->
@@ -56,18 +60,18 @@
         <!-- todays weather -->
 
         <!-- search history -->
-        <ul class="list-group">
-            <li class="list-group-item list"></li>
-            <li class="list-group-item"></li>
-            <li class="list-group-item"></li>
-            <li class="list-group-item"></li>
-            <li class="list-group-item"></li>
+        <div class="row">
+        <ul class="list-group col-sm-3 history">
+            <button type="button" class="btn btn-light btn-lg btn-block list">boston</button>
+            <button type="button" class="btn btn-light btn-lg btn-block">atlanta</button>
+            <button type="button" class="btn btn-light btn-lg btn-block">georgia</button>
+            <button type="button" class="btn btn-light btn-lg btn-block">auburn</button>
           </ul>
-        
 
-        <!-- card layout -->
-        <div class="card-deck">
-            <div class="card">
+          <!-- card layout 5 day forecast-->
+        <div class="card-deck col-sm-9 ">
+           
+            <div class="card bg-info">
               <div class="card-body">
                 <h5 class="day1">Card title</h5>
                 <p class="temp1"></p>
@@ -78,7 +82,7 @@
                 
               </div>
             </div>
-            <div class="card">
+            <div class="card bg-info">
               <div class="card-body">
                 <h5 class="day2">Card title</h5>
                 <p class="temp2"></p>
@@ -89,7 +93,7 @@
                 
               </div>
             </div>
-            <div class="card">
+            <div class="card bg-info">
               <div class="card-body">
                 <h5 class="day3">Card title</h5>
                 <p class="temp3"></p>
@@ -100,8 +104,8 @@
                 
               </div>
             </div>
-            <div class="card">
-                <div class="card-body">
+            <div class="card bg-info">
+                <div class="card-body ">
                   <h5 class="day4">Card title</h5>
                   <p class="temp4"></p>
                   <p class="wind4"></p>
@@ -111,7 +115,7 @@
                   
                 </div>
               </div>
-              <div class="card">
+              <div class="card bg-info">
                 <div class="card-body">
                   <h5 class="day5">Card title</h5>
                   <p class="temp5"></p>
@@ -123,6 +127,10 @@
                 </div>
               </div>
           </div>
+        </div>
+        
+
+        
 
 
 

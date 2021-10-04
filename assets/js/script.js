@@ -164,19 +164,10 @@ button.addEventListener('click', function(event){
                         
                         
                         
-                    
+                    saveCities();
 
 
-                    // saved items 
-                    document.querySelector(".list").value = localStorage.getItem('city');
-                    var list = document.querySelector (".list")
-                    var citySaved = localStorage.getItem('city')
-                    list.innerHTML = citySaved
-
-
-                    localStorage.setItem('city', city.value)
-                    
-                    
+                 
                 })
                 
                 
@@ -186,6 +177,19 @@ button.addEventListener('click', function(event){
 
         })
    
+
+        var saveCities = function(){
+               // saved items 
+               document.querySelector(".list").value = localStorage.getItem('city');
+               var list = document.querySelector (".list")
+               var citySaved = localStorage.getItem('city')
+               list.innerHTML = citySaved
+
+
+               localStorage.setItem('city', city.value)
+               
+               
+        }
 
         // stops it from refreshing 
         event.preventDefault();
